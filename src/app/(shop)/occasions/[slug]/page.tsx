@@ -27,7 +27,7 @@ export default async function OccasionPage({ params }: Props) {
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
         <div className="absolute inset-0 flex items-center">
           <div className="container-site">
-            {occasion.icon && <span className="text-4xl mb-2 block">{occasion.icon}</span>}
+            {/* {occasion.icon && <span className="text-4xl mb-2 block">{occasion.icon}</span>} */}
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white">{occasion.name}</h1>
             {occasion.description && (
               <p className="text-white/80 mt-2 max-w-md">{occasion.description}</p>
