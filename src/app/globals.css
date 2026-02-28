@@ -1,0 +1,161 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ─── Brand + shadcn tokens mapeados a Tailwind utilities ─── */
+@theme inline {
+  /* shadcn required */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  /* Brand FiestaMania */
+  --color-cream: var(--cream);
+  --color-cream-dark: var(--cream-dark);
+  --color-pink-accent: var(--pink-accent);
+  --color-pink-light: var(--pink-light);
+  --color-teal-accent: var(--teal-accent);
+  --color-teal-light: var(--teal-light);
+  --color-dark: var(--dark);
+  --color-mid: var(--mid);
+  --color-brand-border: var(--brand-border);
+
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
+
+  /* Shadows */
+  --shadow-card: 0 2px 12px oklch(0.145 0 0 / 6%);
+  --shadow-card-hover: 0 8px 32px oklch(0.145 0 0 / 12%);
+  --shadow-navbar: 0 2px 16px oklch(0.145 0 0 / 8%);
+
+  /* Animations */
+  --animate-confetti-fall: confetti-fall 3s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+/* ─── Design Tokens ─── */
+:root {
+  --radius: 0.75rem;
+
+  /* shadcn neutral palette */
+  --background: oklch(0.99 0.004 80);       /* cálido casi blanco #F8F5F0 */
+  --foreground: oklch(0.145 0 0);           /* #1A1A1A */
+  --card: oklch(1 0 0);                     /* #FFFFFF */
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.145 0 0);             /* negro para botones primarios */
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.96 0.006 80);        /* cream-dark */
+  --secondary-foreground: oklch(0.145 0 0);
+  --muted: oklch(0.96 0.006 80);
+  --muted-foreground: oklch(0.5 0 0);       /* #666 */
+  --accent: oklch(0.61 0.24 10);            /* pink-accent #FF3B7B */
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.91 0.008 80);           /* #E5E1DB */
+  --input: oklch(0.91 0.008 80);
+  --ring: oklch(0.61 0.24 10);              /* pink-accent */
+
+  /* Brand tokens */
+  --cream: oklch(0.99 0.004 80);            /* #F8F5F0 */
+  --cream-dark: oklch(0.96 0.006 80);       /* #F0EAE0 */
+  --pink-accent: oklch(0.61 0.24 10);       /* #FF3B7B */
+  --pink-light: oklch(0.93 0.04 10);        /* #FFD6E0 */
+  --teal-accent: oklch(0.72 0.13 195);      /* #00BCBC */
+  --teal-light: oklch(0.95 0.05 195);       /* #D6F7F7 */
+  --dark: oklch(0.145 0 0);                 /* #1A1A1A */
+  --mid: oklch(0.5 0 0);                    /* #666 */
+  --brand-border: oklch(0.91 0.008 80);     /* #E5E1DB */
+}
+
+/* ─── Keyframes ─── */
+@keyframes confetti-fall {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(-12px) rotate(180deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ─── Base styles ─── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-dark font-sans antialiased;
+  }
+}
+
+/* ─── Utility classes ─── */
+@layer utilities {
+  .container-site {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .section-py {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-dark tracking-tight;
+  }
+  .text-accent-pink {
+    color: var(--pink-accent);
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1;
+    transition-property: transform, box-shadow;
+  }
+  .card-hover:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+  .btn-add-cart {
+    @apply w-9 h-9 rounded-full bg-dark text-white flex items-center justify-center transition-colors duration-200 cursor-pointer;
+  }
+  .btn-add-cart:hover {
+    background-color: var(--pink-accent);
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .animate-float {
+    animation: var(--animate-float);
+  }
+  .animate-confetti-fall {
+    animation: var(--animate-confetti-fall);
+  }
+}
