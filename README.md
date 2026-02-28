@@ -6,7 +6,7 @@ E-commerce de artículos para fiestas y piñatería, construido con **Next.js 15
 
 ## Demo en vivo
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/TU_USUARIO/fiestamania-demo)
+[![Deploy with Vercel](https://vercel.com/button)](https://demofiestamaniamockdata.vercel.app/)
 
 ### Credenciales de prueba
 

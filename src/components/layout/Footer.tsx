@@ -37,15 +37,15 @@ export function Footer() {
             <div className="mt-5 space-y-2 text-sm text-white/60">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                <span>Av. Juárez 1234, Col. Centro<br />Ciudad de México, CDMX 06000</span>
+                <span>Av. Juárez 1234, Mex. Centro<br />Ciudad de México, CDMX 06000</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 shrink-0" />
-                <span>+52 (55) 1234-5678</span>
+                <span>+57 3113487525</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 shrink-0" />
-                <span>hola@fiestamania.mx</span>
+                <span>estebancastro400@gmail.com</span>
               </div>
             </div>
           </div>
@@ -121,7 +121,7 @@ export function Footer() {
         <Separator className="my-8 bg-white/10" />
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
-          <p>© 2025 FiestaMania. Todos los derechos reservados.</p>
+          <p>© 2025 Esteban Castro developer. Todos los derechos reservados.</p>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-white/70 transition-colors">
               Privacidad
